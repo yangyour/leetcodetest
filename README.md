@@ -1,4 +1,4 @@
-## 从2020年10月26日开始每天至少一道立扣算法题刷题日记打卡
+
 > 题目来源：力扣（LeetCode）
 >
 >  链接：https://leetcode-cn.com/problems/add-two-numbers
