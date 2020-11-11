@@ -1,7 +1,6 @@
 package com.wu.leetcode.leetcode.November;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 
 /**
  * @author wuxuyang
@@ -25,26 +24,60 @@ public class Solution {
                 if (list.size()>les){
                     les=list.size();
                 }
-                int i = list.indexOf(chars[i1]);
-                list=list.subList(i,list.size()-1);
+                Iterator<Character> iterator = list.iterator();
+                while (iterator.hasNext()){
+                    if (!iterator.next().equals(chars[i1])){
+                        iterator.remove();
+                    }else {
+                        iterator.remove();
+                        break;
+                    }
+                }
                 list.add(chars[i1]);
             }else {
                 list.add(chars[i1]);
             }
             if (i1==chars.length-1){
                 if (list.size()>les){
-//                    System.out.println(list.get(0));
                     les=list.size();
                 }
-            }
-            for (Character character : list) {
-                System.out.println(character);
             }
         }
         return les;
     }
 
+
+    public static int lengthOfLongestSubstringLeeCode(String s) {
+        int n = s.length(), ans = 0;
+        Map<Character, Integer> map = new HashMap<>();
+        for (int end = 0, start = 0; end < n; end++) {
+            char alpha = s.charAt(end);
+            if (map.containsKey(alpha)) {
+                start = Math.max(map.get(alpha), start);
+            }
+            ans = Math.max(ans, end - start + 1);
+            map.put(s.charAt(end), end + 1);
+        }
+        return ans;
+    }
+
+    public static int test(String s){
+//        bpfbhmipx
+        int res=0,n=s.length();
+        Map<Character,Integer> map=new HashMap<>();
+        for (int end=0,start=0;end<n;end++){
+            char c = s.charAt(end);
+            if (map.containsKey(c)){
+                start=Math.max(map.get(c),start);
+            }
+            res=Math.max(res,end-start+1);
+            map.put(s.charAt(end),end+1);
+        }
+        return res;
+    }
     public static void main(String[] args) {
-        System.out.println(lengthOfLongestSubstring("dvdf"));;
+        System.out.println(test("bpfbhmipx"));;
+//        int max = Math.max(1, 2);
+//        System.out.println(max);
     }
 }
