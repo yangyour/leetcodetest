@@ -35,7 +35,7 @@ public class Palindrome {
     }
 
     //正确答案
-    public String longestPalindrome(String s) {
+    public static String longestPalindrome(String s) {
         // 特判
         int len = s.length();
         if (len < 2) {
@@ -90,12 +90,14 @@ public class Palindrome {
             for (int i = 0; i < j; i++) {
                 if (charArray[i] != charArray[j]) {
                     dp[i][j] = false;
+                }else {
+                    if (j - i < 3) {
+                        dp[i][j] = true;
+                    } else {
+                        dp[i][j] = dp[i + 1][j - 1];
+                    }
                 }
-                if (j - i < 3) {
-                    dp[i][j] = true;
-                } else {
-                    dp[i][j] = dp[i + 1][j - 1];
-                }
+
                 if (dp[i][j] && j - i + 1 > maxLen) {
                     maxLen = j - i + 1;
                     begin = i;
@@ -125,12 +127,14 @@ public class Palindrome {
             for (int i = 0; i < j; i++) {
                 if (charArray[i] != charArray[j]) {
                     dp[i][j] = false;
+                }else {
+                    if (j - i < 3) {
+                        dp[i][j] = true;
+                    } else {
+                        dp[i][j] = dp[i + 1][j - 1];
+                    }
                 }
-                if (j - i < 3) {
-                    dp[i][j] = true;
-                } else {
-                    dp[i][j] = dp[i + 1][j - 1];
-                }
+
                 if (dp[i][j] &&j-i+1>maxLen){
                     maxLen=j-i+1;
                     begin=i;
@@ -140,4 +144,40 @@ public class Palindrome {
         return s.substring(begin,begin+maxLen);
     }
 
+    public static String test1(String s){
+        int length = s.length();
+        if (length<2){
+            return s;
+        }
+        int maxLen=1;
+        int begin=0;
+        boolean[][] dp =new boolean[length][length];
+        char[] charArray = s.toCharArray();
+        for (int i=0;i<length;i++){
+            dp[i][i]=true;
+        }
+        for (int j=1;j<length;j++){
+            for (int i=0;i<j;i++){
+                if (charArray[j]!=charArray[i]){
+                    dp[i][j]=false;
+                }else {
+                    if (j-i<3){
+                        dp[i][j]=true;
+                    }else {
+                        dp[i][j]=dp[i+1][j-1];
+                    }
+                }
+
+                if (dp[i][j]&&j-i+1>maxLen){
+                    maxLen=j-i+1;
+                    begin=i;
+                }
+            }
+        }
+        return s.substring(begin,begin+maxLen);
+    }
+
+    public static void main(String[] args) {
+        System.out.println(test1("qeqqeqweqewwqeqeqrffafaff"));
+    }
 }
