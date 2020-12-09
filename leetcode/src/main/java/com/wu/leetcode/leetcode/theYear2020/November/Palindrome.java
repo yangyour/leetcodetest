@@ -1,9 +1,7 @@
-package com.wu.leetcode.leetcode.November;
+package com.wu.leetcode.leetcode.theYear2020.November;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 /**
  * @author wuxuyang

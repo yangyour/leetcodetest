@@ -1,19 +1,14 @@
-package com.wu.leetcode.leetcode.November;
+package com.wu.leetcode.leetcode.theYear2020.November;
 
 /**
  * @author wuxuyang
  * @date 2020/12/8 10:32
  */
-import com.alibaba.fastjson.JSON;
 
-import java.io.BufferedWriter;
 import java.io.File;
-import java.io.FileOutputStream;
 import java.io.IOException;
-import java.io.OutputStreamWriter;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Vector;
 
 public class FileList {
     private String dir_name="\\\\192.168.6.180\\测试部\\新建文件夹1";
