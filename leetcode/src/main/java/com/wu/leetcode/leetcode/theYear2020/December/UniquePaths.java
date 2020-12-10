@@ -22,7 +22,7 @@ public class UniquePaths {
         int start = 0;
         for (int j = 0; j < n; j++) {
             int zh = n - 1;
-            int zo=m+n-1;
+            int zo = m + n - 1;
         }
         return 0;
     }
@@ -30,27 +30,43 @@ public class UniquePaths {
     //正确答案
     public static int uniquePaths(int m, int n) {
         int[] cur = new int[n];
-        Arrays.fill(cur,1);
-        for (int i = 1; i < m;i++){
-            for (int j = 1; j < n; j++){
-                cur[j] += cur[j-1] ;
-            }
-        }
-        return cur[n-1];
-    }
-    public static int test1(int m,int n){
-        int[] arr=new int[n];
-        Arrays.fill(arr,1);
+        Arrays.fill(cur, 1);
         for (int i = 1; i < m; i++) {
             for (int j = 1; j < n; j++) {
+                cur[j] += cur[j - 1];
+            }
+        }
+        return cur[n - 1];
+    }
+
+    public static int test1(int m, int n) {
+        int[] arr = new int[n];
+        Arrays.fill(arr, 1);
+        for (int i = 1; i < m; i++) {
+            for (int j = 1; j < n; j++) {
+                arr[j] += arr[j - 1];
+            }
+        }
+        return arr[n - 1];
+    }
+    public static int test2(int m,int n){
+        int arr[] =new int[n];
+        Arrays.fill(arr,1);
+        for (int i=1;i<m;i++){
+            for (int j=1;j<n;j++){
                 arr[j]+=arr[j-1];
             }
         }
         return arr[n-1];
     }
 
+    public static int test3(int m,int n){
+        int[] arr=new int[n];
+        return 1;
+    }
+
     public static void main(String[] args) {
-        System.out.println(test1(5,10));
+        System.out.println(test2(5, 10));
     }
 
 }
