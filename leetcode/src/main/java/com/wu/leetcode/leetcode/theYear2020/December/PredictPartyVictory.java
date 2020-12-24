@@ -84,5 +84,21 @@ public class PredictPartyVictory {
         }
     }
 
-
+//    public static String test1(String senate){
+//        int RNumber=0;
+//        int DNumber=0;
+//        int curBanR=0;
+//        int curBanD=0;
+//        int totalBanNumR=0;
+//        int totalBanNumD=0;
+//        char[] charArray = senate.toCharArray();
+//        boolean flag=true;
+//        while (flag){
+//            for (int i = 0; i < charArray.length; i++) {
+//                if (charArray[i]=='D'){
+//
+//                }
+//            }
+//        }
+//    }
 }
