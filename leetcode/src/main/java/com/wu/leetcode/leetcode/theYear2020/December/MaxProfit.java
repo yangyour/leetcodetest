@@ -1,6 +1,6 @@
 package com.wu.leetcode.leetcode.theYear2020.December;
 
-import java.util.Arrays;
+import java.util.*;
 
 /**
  * @author wuxuyang
@@ -15,8 +15,13 @@ public class MaxProfit {
      * 注意：你不能同时参与多笔交易（你必须在再次购买前出售掉之前的股票）。
      */
     public int maxProfit(int k, int[] prices) {
-        for (int price : prices) {
+        int [] s={3,2,6,5,8,2,1,10,0,3};
+        int rs=0;
+        List<Map<Integer,Integer>> list=new ArrayList<>();
+        for (int i = 0; i < prices.length; i++) {
 
         }
+        return 1;
     }
+
 }
